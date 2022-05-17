@@ -1,0 +1,8 @@
+# Temporary files.
+*~
+.#*
+\#*#
+*.orig
+
+# macOS
+.DS_Store
