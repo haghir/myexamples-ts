@@ -7,22 +7,44 @@ function querySelector(selector: string): HTMLElement {
 }
 
 window.onload = () => {
-    const pressed: HTMLElement = querySelector("#pressed");
-    const repeating: HTMLElement = querySelector("#repeating");
-    const keyup: HTMLElement = querySelector("#keyup");
+    const up: HTMLElement = querySelector("#up");
+    const down: HTMLElement = querySelector("#down");
+    const left: HTMLElement = querySelector("#left");
+    const right: HTMLElement = querySelector("#right");
+    const z: HTMLElement = querySelector("#z");
+    const x: HTMLElement = querySelector("#x");
+
+    function update(key: string, value: string) {
+        switch (key) {
+            case "ArrowUp":
+                up.innerHTML = value;
+                break;
+            case "ArrowDown":
+                down.innerHTML = value;
+                break;
+            case "ArrowLeft":
+                left.innerHTML = value;
+                break;
+            case "ArrowRight":
+                right.innerHTML = value;
+                break;
+            case "Z":
+            case "z":
+                z.innerHTML = value;
+                break;
+            case "X":
+            case "x":
+                x.innerHTML = value;
+                break;
+        }
+    }
 
     window.addEventListener("keydown", (e) => {
-        if (!e.repeat) {
-            console.log(`${e.key} was pressed.`);
-            pressed.innerHTML = `${e.key}`;
-        } else {
-            console.log(`${e.key} is repeating.`);
-            repeating.innerHTML = `${e.key}`;
-        }
+        if (!e.repeat)
+            update(e.key, "●");
     });
 
     window.addEventListener("keyup", (e) => {
-        console.log(`${e.key} was released.`);
-        keyup.innerHTML = `${e.key}`;
+        update(e.key, "○");
     });
 };

@@ -4,7 +4,8 @@
     <meta charset="UTF-8"/>
     <title>TEST</title>
     <style>
-     td {
+     th, td {
+       text-align: center;
        font-size: xx-large;
      }
     </style>
@@ -12,16 +13,20 @@
   <body>
     <table>
       <tr>
-        <td>Pressed:</td>
-        <td id="pressed"></td>
+        <th>&larr;</th>
+        <th>&uarr;</th>
+        <th>&darr;</th>
+        <th>&rarr;</th>
+        <th>Z</th>
+        <th>X</th>
       </tr>
       <tr>
-        <td>Repeating:</td>
-        <td id="repeating"></td>
-      </tr>
-      <tr>
-        <td>KeyUp:</td>
-        <td id="keyup"></td>
+        <td id="left">○</td>
+        <td id="up">○</td>
+        <td id="down">○</td>
+        <td id="right">○</td>
+        <td id="z">○</td>
+        <td id="x">○</td>
       </tr>
     </table>
     <script src="main.js"></script>
